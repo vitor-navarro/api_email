@@ -1,1 +1,62 @@
 validações de segurança - teste
+https://www.youtube.com/watch?v=h4A8HytL5ts
+
+-autenticação e autorização
+Confirmar que o aplicativo e o usuário é quem é e tem autorização
+
+    Acesso não autorizado
+        Nesse caso vou usar token para que o usuário não precise logar com usuario/senha.
+        Aplicação tem cors para ajudar nisso
+    ataque de força bruta
+    roubo de credenciais
+    session hijacking
+
+-Disponibilidade
+
+    DDos    
+        limitar o uso da api para não ocorrer ataques DDos
+    Buffer Overflow
+    Injection (SQL, XML, json)
+
+            rate limity policy
+            JSON threat policy
+            payload size policy
+            ip filtering policy
+
+-Privacidade
+Só quem tem autorização pode ver algo
+
+    Para evitar probelma:
+        Use SSL/tls
+        Em algumas situações pode requerer-se criptografia adicional (Sempre use algoritmos já comprovados)
+        Informções sensíveis devem ser mascaradas (números de cartão de crédito, tokens etc)
+
+    Information disclouse (revelação de dados privados)
+    man-in-the-middle e network eavesdropping(espionagem)
+    Data Scraping
+
+-Auditoria
+Saber quem fez algo no sistema.
+
+    Repudiação  
+    compliance (PCI-DSS, HIPAA)
+
+    OBs:
+    sempre Armazenar os logs com chamadas realizadas (especialmente as críticas)
+    Mas cuidado pois os logs podem crescer e muito.
+    logs em arquivo nem sempre são fáceis de inspecionar / buscar
+    Dados sensíveis devem ser obfuscados
+
+-Integridade
+
+    Ameaças:
+    Injection (SQL, XML, json)
+    cross-site scripting (xss)
+    cross-site request forgery (xsrf)
+
+    Para evitar problemas:
+        Reduizr a superficie de ataque, (o que não pode ser acessado nem deve ser mostrado)
+        Default não deve ter Acesso
+        prevençõa de XML,JSON e SQL Injection (filter input, escape output)
+        Unique transaction ID para evitar "Replay requests"
+        Utilizar chaves opacas como lçjfkçlashnfklahjç em vez de 132156345.
