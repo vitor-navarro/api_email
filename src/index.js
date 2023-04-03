@@ -4,7 +4,7 @@ require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
-const email_template_1 = require('./templates/templates');
+const email_template_simple = require('./templates/simple_template');
 
 const cors = require('cors')
 const corsOptions = {
@@ -38,7 +38,7 @@ async function sendMail(body){
     const to_emails = (process.env.GMAIL_TO_EMAIL_LIST)
 
     const mailSend = await transporter.sendMail({
-        text: email_template_1(body,company),
+        text: email_template_simple(body,company),
         subject: `Orçamento de ${body.name}`,
         from: process.env.GMAIL_FROM_EMAIL,
         to: to_emails,
