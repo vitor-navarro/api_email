@@ -1,4 +1,4 @@
-function email_template_simple(body, company = '') {
+function emailTemplateSimple(body, company = '') {
     return `
         NOME: ${body.name}
         TELEFONE: ${body.phone}
@@ -11,4 +11,4 @@ function email_template_simple(body, company = '') {
     `;
 }
 
-module.exports = email_template_simple
+module.exports = emailTemplateSimple
