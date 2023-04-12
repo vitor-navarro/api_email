@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const email_template_simple = require('./templates/simple_template');
+var helmet = require('helmet');
 
 const cors = require('cors')
 const corsOptions = {
@@ -17,6 +18,10 @@ const port = process.env.PORT;
 
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
+
+//security
+//app.use(helmet());
+
 
 const transporter = nodemailer.createTransport({
     host: SMTP_CONFIG.host,
@@ -48,7 +53,8 @@ async function sendMail(body){
 }
 
 app.post('/emailSend', (req, res) => {
-
+    console.log(req.body)
+    
     sendMail(req.body)
     .then(function(response) {
         console.log("SUCCESS!",response)

@@ -1,0 +1,19 @@
+**translated from Portuguese-Brazil to English by google translator
+
+ATTENTION: Do not give information such as password or email to anyone as they can be used to send to other people
+NOTE: do not send your configured .env to github, the .env.example is a version of the .env without sensitive information
+
+A file called .env will have to be created in your project,
+
+it is a file for configuring environment variables, there are several in it,
+
+create in your project a file called .env (don't send it to github)
+
+Copy the information that is in the .env.example and replace it with yours (In the next files there is more information about this)
+
+Note that some information must not be changed such as:
+
+GMAIL_HOST=smtp.gmail.com
+GMAIL_PORT=587
+
+They are already configured as the smtp that will be used to access the API for sending emails to gmail.
