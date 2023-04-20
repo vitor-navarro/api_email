@@ -9,7 +9,7 @@ var helmet = require('helmet');
 
 const cors = require('cors')
 const corsOptions = {
-    origin: process.env.ENABLED_CORS
+    origin: [process.env.ENABLED_CORS]
 }
 
 const emailsRoutes = require("./emails")
